@@ -75,7 +75,7 @@ var LibrosModel = require('../models/libros-model'),
   
         console.log(libros)
   
-        PedidoModel.post(libros, (err) => {
+        LibrosModel.post(libros, (err) => {
           if(err)
           {
             let locals = {
