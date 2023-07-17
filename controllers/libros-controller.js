@@ -36,7 +36,7 @@ var LibrosModel = require('../models/libros-model'),
         let codigo_libro = req.body.codigo_libro
         console.log(codigo_libro)
   
-        PedidoModel.getOne(codigo_libro, (err, rows) => {
+        LibrosModel.getOne(codigo_libro, (err, rows) => {
           console.log(err, '---', rows)
           if(err){
             let locals = {
