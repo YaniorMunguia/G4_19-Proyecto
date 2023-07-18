@@ -13,8 +13,7 @@ router
   .post("/libros/insertar/:codigo_libro", LibrosController.post)
   .put("/libros/actualizar/:codigo_libro", LibrosController.put)
   .delete("/libros/eliminar/:codigo_libro", LibrosController.delete)
-  .use(LibrosController.error404)
-
+ 
 
   //*** ESCRITOR ***
   .get("/escritor/getall", EscritorController.getAll)
@@ -22,7 +21,7 @@ router
   .post("/escritor/insertar/:numero_escritor", EscritorController.post)
   .put("/escritor/actualizar/:numero_escritor", EscritorController.put)
   .delete("/escritor/eliminar/:numero_escritor", EscritorController.delete)
-  .use(EscritorController.error404)
+  
 
 
 
@@ -32,8 +31,9 @@ router
   .post("/editorial/insertar/:numeroeditorial", EditorialController.post)
   .put("/editorial/actualizar/:numeroeditorial", EditorialController.put)
   .delete("/editorial/eliminar/:numeroeditorial", EditorialController.delete)
-  .use(EditorialController.error404);
-
+  .use(LibrosController.error404)
+  .use(EditorialController.error404)
+  .use(EscritorController.error404);
 module.exports = router;
 
 
