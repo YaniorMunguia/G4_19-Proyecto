@@ -1,6 +1,6 @@
 'use strict'
 
-var EditorialModel = require('../models/libros-model'),
+var EditorialModel = require('../models/Editorial-model'),
     EditorialController = () => {}
 
      EditorialController.getAll = (req, res, netx) => {
@@ -37,7 +37,7 @@ var EditorialModel = require('../models/libros-model'),
         let numeroeditorial = req.body.numeroeditorial
         console.log(numeroeditorial)
   
-        PedidoModel.getOne(numeroeditorial, (err, rows) => {
+        EditorialModel.getOne(numeroeditorial, (err, rows) => {
           console.log(err, '---', rows)
           if(err)
           {
@@ -67,18 +67,18 @@ var EditorialModel = require('../models/libros-model'),
 
       EditorialController.post = (req, res,next) => {
         let editorial = {
-          numeroeditorial :req.body.numeroeditorial,
-          nombreeditorial : req.body.nombreeditorial,
-          direccion : req.body.direccion,
-          pais : req.body.pais,
-          fechadefundacion : req.body.fechadefundacion,
-          cantidaddelibrosimpresos : req.body.cantidaddelibrosimpresos,
-          numerodetelefono : req.body.numerodetelefono
+          numeroeditorial: req.body.numeroeditorial,
+          nombreeditorial: req.body.nombreeditorial,
+          direccion: req.body.direccion,
+          pais: req.body.pais,
+          fechadefundacion: req.body.fechadefundacion,
+          cantidaddelibrosimpresos: req.body.cantidaddelibrosimpresos,
+          numerodetelefono: req.body.numerodetelefono
         }
   
         console.log(editorial)
   
-        PedidoModel.post(editorial, (err) => {
+        editorialModel.post(editorial, (err) => {
           if(err)
           {
             let locals = {
@@ -101,13 +101,13 @@ var EditorialModel = require('../models/libros-model'),
 
       EditorialController.put = (req, res,next) => {
         let editorial = {
-            numeroeditorial :req.body.numeroeditorial,
-             nombreeditorial : req.body.nombreeditorial,
-            direccion : req.body.direccion,
-            pais : req.body.pais,
-            fechadefundacion : req.body.fechadefundacion,
-            cantidaddelibrosimpresos : req.body.cantidaddelibrosimpresos,
-             numerodetelefono : req.body.numerodetelefono
+            numeroeditorial: req.body.numeroeditorial,
+            nombreeditorial: req.body.nombreeditorial,
+            direccion: req.body.direccion,
+            pais: req.body.pais,
+            fechadefundacion: req.body.fechadefundacion,
+            cantidaddelibrosimpresos: req.body.cantidaddelibrosimpresos,
+            numerodetelefono: req.body.numerodetelefono
         }
   
         console.log(editorial)

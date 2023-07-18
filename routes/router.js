@@ -29,3 +29,20 @@ router
 
 module.exports = router;
 
+//RUTA Editorial
+var EditorialController = require("../controllers/Editorial-controller"),
+  express = require("express"),
+  router = express.Router();
+
+router
+  //*** EDITORIAL ***
+  .get("/editorial/getall", EditorialController.getAll)
+  .get("/editorial/getone/:numeroeditorial", EditorialController.getOne)
+  .post("/editorial/insertar/:numeroeditorial", EditorialController.post)
+  .put("/editorial/actualizar/:numeroeditorial", EditorialController.put)
+  .delete("/editorial/eliminar/:numeroeditorial", EditorialController.delete)
+  .use(EditorialController.error404);
+
+module.exports = router;
+
+
