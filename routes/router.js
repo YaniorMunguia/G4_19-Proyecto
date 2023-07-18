@@ -34,6 +34,7 @@ router
   .use(LibrosController.error404)
   .use(EditorialController.error404)
   .use(EscritorController.error404);
+  
 module.exports = router;
 
 
