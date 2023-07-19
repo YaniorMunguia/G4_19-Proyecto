@@ -11,17 +11,18 @@ EditorialModel.getOne = (numeroeditorial,cb) =>
             "SELECT * FROM EDITORIAL WHERE NUMEROEDITORIAL = $1", [numeroeditorial], cb);
          
 EditorialModel.post = (data, cb) =>
-         conn.query("call public.editorial_insert ($1,$2,$3,$4,$5,$6,$7)",
+        conn.query( "call public.editorial_insert ($1,$2,$3,$4,$5,$6,$7)",
         [
-            data.numeroeditorial,
-            data.nombreeditorial,
-            data.direccion,
-            data.pais,
-            data.fechadefundacion,
-            data.cantidaddelibrosimpresos,
-            data.numerodetelefono
+           data.numeroeditorial,
+           data.nombreeditorial,
+           data.direccion,
+           data.pais,               
+           data.fechadefundacion,
+           data.cantidaddelibrosimpresos,
+           data.numerodetelefono
         ],
         cb);
+
 EditorialModel.put = (data, cb) =>
          conn.query( "call public.editorial_update ($1,$2,$3,$4,$5,$6,$7)",
         [

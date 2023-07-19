@@ -65,7 +65,8 @@ var EditorialModel = require('../models/Editorial-model'),
   
       }
 
-      EditorialController.post = (req, res,next) => {
+      EditorialController.post = (req, res,next) => 
+      {
         let editorial = {
           numeroeditorial: req.body.numeroeditorial,
           nombreeditorial: req.body.nombreeditorial,
@@ -78,11 +79,11 @@ var EditorialModel = require('../models/Editorial-model'),
   
         console.log(editorial)
   
-        editorialModel.post(editorial, (err) => {
+        EditorialModel.post(editorial, (err) => {
           if(err)
           {
             let locals = {
-              title : `Error al salvar el registro con el id: ${editorial.numeroeditorial}`,
+              title : `Error al buscar el registro con el id: ${editorial.numeroeditorial}`,
               description : "Error de Sintaxis SQL",
               error : err
             }
@@ -99,15 +100,17 @@ var EditorialModel = require('../models/Editorial-model'),
       }
 
 
-      EditorialController.put = (req, res,next) => {
-        let editorial = {
-            numeroeditorial: req.body.numeroeditorial,
-            nombreeditorial: req.body.nombreeditorial,
-            direccion: req.body.direccion,
-            pais: req.body.pais,
-            fechadefundacion: req.body.fechadefundacion,
-            cantidaddelibrosimpresos: req.body.cantidaddelibrosimpresos,
-            numerodetelefono: req.body.numerodetelefono
+      EditorialController.put = (req, res,next) => 
+      {
+        let editorial = 
+        {
+          numeroeditorial: req.body.numeroeditorial,
+          nombreeditorial: req.body.nombreeditorial,
+          direccion: req.body.direccion,
+          pais: req.body.pais,
+          fechadefundacion: req.body.fechadefundacion,
+          cantidaddelibrosimpresos: req.body.cantidaddelibrosimpresos,
+          numerodetelefono: req.body.numerodetelefono
         }
   
         console.log(editorial)
