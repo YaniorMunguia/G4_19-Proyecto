@@ -102,8 +102,7 @@ var EditorialModel = require('../models/Editorial-model'),
 
       EditorialController.put = (req, res,next) => 
       {
-        let editorial = 
-        {
+        let editorial = {
           numeroeditorial: req.body.numeroeditorial,
           nombreeditorial: req.body.nombreeditorial,
           direccion: req.body.direccion,
@@ -155,7 +154,7 @@ var EditorialModel = require('../models/Editorial-model'),
             }
             else
             {
-              res.send('Libro Eliminado Exitosamente')
+              res.send('Editorial Eliminado Exitosamente')
             }
   
           })
