@@ -10,7 +10,7 @@ AlquilerController = require("../controllers/alquiler-controller"),
 router
   //**** LIBROS****
   .get("/libros/getall", LibrosController.getAll)
-  .get("/libros/getone/:codigo_libro", LibrosController.getOne)
+  .post("/libros/getone/:codigo_libro", LibrosController.getOne)
   .post("/libros/insertar/:codigo_libro", LibrosController.post)
   .put("/libros/actualizar/:codigo_libro", LibrosController.put)
   .delete("/libros/eliminar/:codigo_libro", LibrosController.delete)
