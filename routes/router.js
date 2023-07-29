@@ -21,14 +21,14 @@ router
 
   //*** ESCRITOR ***
   .get("/escritor/getall", EscritorController.getAll)
-  .get("/escritor/getone/:numero_escritor", EscritorController.getOne)
+  .post("/escritor/getone/:numero_escritor", EscritorController.getOne)
   .post("/escritor/insertar/:numero_escritor", EscritorController.post)
   .put("/escritor/actualizar/:numero_escritor", EscritorController.put)
   .delete("/escritor/eliminar/:numero_escritor", EscritorController.delete)
   
 //**** ALQUILER****
 .get("/alquiler/getall", AlquilerController.getAll)
-.get("/alquiler/getone/:codigo_libro", AlquilerController.getOne)
+.post("/alquiler/getone/:codigo_libro", AlquilerController.getOne)
 .post("/alquiler/insertar/:codigo_libro", AlquilerController.post)
 .put("/alquiler/actualizar/:codigo_libro", AlquilerController.put)
 .delete("/alquiler/eliminar/:codigo_libro", AlquilerController.delete)
@@ -36,7 +36,7 @@ router
 
   //*** EDITORIAL ***
   .get("/editorial/getall", EditorialController.getAll)
-  .get("/editorial/getone/:numeroeditorial", EditorialController.getOne)
+  .post("/editorial/getone/:numeroeditorial", EditorialController.getOne)
   .post("/editorial/insertar/:numeroeditorial", EditorialController.post)
   .put("/editorial/actualizar/:numeroeditorial", EditorialController.put)
   .delete("/editorial/eliminar/:numeroeditorial", EditorialController.delete)
